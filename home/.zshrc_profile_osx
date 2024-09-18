@@ -1,0 +1,23 @@
+# User Profile configuration
+
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Example aliases
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+#
+export JAVA_HOME=/opt/homebrew/opt/openjdk/bin/java
+alias ll="ls -al"
+alias dev="ssh dev"
+alias dev2="ssh dev2"
+alias port="sudo /opt/local/bin/port"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"

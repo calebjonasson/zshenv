@@ -1,0 +1,49 @@
+# User Profile configuration
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Example aliases
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# pyenv configuration
+#eval "$(pyenv virtualenv-init -)"
+
+# custom tools
+alias ll="ls -al"
+alias jj="python3 /mnt/destiny/workspace/journal/journal.py"
+alias vault="bash ~/ansible-edit-vault.sh"
+alias apb='ansible-playbook'
+alias resource='source ~/.bashrc'
+
+alias gits='git status .'
+alias gitcp='resource && git add -i && git commit -i && git push'
+
+# Created by `pipx` on 2024-05-16 01:34:34
+export PATH="$PATH:$HOME/.local/bin"
+
+# Configure Go
+export PATH=$PATH:/usr/local/go/bin
+
+# Fix for vscode to use the correct socket.
+#
+export SSH_AUTH_SOCK=$(ls -t /tmp/ssh-**/* | head -1)
+. "$HOME/.cargo/env"
+
+# Configure rust
+export CARGO_HOME=$HOME/.cargo
+alias binstall='cargo-binstall'
+alias cargo="RUSTFLAGS='-Z threads=8' cargo +nightly"
+
+# Configure node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
